@@ -1,3 +1,9 @@
+# Configure the Datadog provider
+provider "datadog" {
+  api_key = var.datadog_api_key
+  app_key = var.datadog_app_key
+}
+
 # Create a new Datadog monitor
 resource "datadog_monitor" "foo" {
   name               = "Name for monitor foo"
@@ -29,3 +35,4 @@ resource "datadog_monitor" "foo" {
 
   tags = ["foo:bar", "baz"]
 }
+
